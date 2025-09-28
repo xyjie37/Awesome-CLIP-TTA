@@ -1,6 +1,6 @@
 # Awesome-CLIP-TTA
 ## Description
-This repository compiles papers on Test-Time Adaptation algorithms for the CLIP model.
+This repository curates papers on Test-Time Adaptation (TTA) algorithms for the CLIP model. The papers in this repository adhere to the strict standard of Online Test-time Adaptation (OTTA). This standard is characterized by the use of only unlabeled test data, which arrives in sequential batches. The model is then adjusted incrementally with each batch to produce predictions.
 ## 2025
 `B2TPT`[AAAI'2025]**Black-Box Test-Time Prompt Tuning for Vision-Language Models**[[paper](https://ojs.aaai.org/index.php/AAAI/article/view/32652)][[code](https://github.com/MFAaaaaaa/B2TPT)]   
 `SEraser`[AAAI'2025]**Spurious Feature Eraser: Stabilizing Test-Time Adaptation for Vision-Language Foundation Model**[[paper](https://ojs.aaai.org/index.php/AAAI/article/view/34124)][[code](https://github.com/MaHuanAAA/SEraser)]   
