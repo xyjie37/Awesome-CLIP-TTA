@@ -2,8 +2,8 @@
 ## Description
 This repository compiles papers on Test-Time Adaptation algorithms for the CLIP model.
 ## 2025
-`SEraser`[AAAI'2025]**Spurious Feature Eraser: Stabilizing Test-Time Adaptation for Vision-Language Foundation Model**[[paper](https://ojs.aaai.org/index.php/AAAI/article/view/34124)][[code](https://github.com/MaHuanAAA/SEraser)]   
 `B2TPT`[AAAI'2025]**Black-Box Test-Time Prompt Tuning for Vision-Language Models**[[paper](https://ojs.aaai.org/index.php/AAAI/article/view/32652)][[code](https://github.com/MFAaaaaaa/B2TPT)]   
+`SEraser`[AAAI'2025]**Spurious Feature Eraser: Stabilizing Test-Time Adaptation for Vision-Language Foundation Model**[[paper](https://ojs.aaai.org/index.php/AAAI/article/view/34124)][[code](https://github.com/MaHuanAAA/SEraser)]   
 `BCA`[CVPR'2025]**Bayesian Test-Time Adaptation for Vision-Language Models**[[paper](https://openaccess.thecvf.com/content/CVPR2025/papers/Zhou_Bayesian_Test-Time_Adaptation_for_Vision-Language_Models_CVPR_2025_paper.pdf)][[code](https://github.com/cuishuang99/BayesTTA)]    
 `COSMIC`[CVPR'2025]**COSMIC: Clique-Oriented Semantic Multi-space Integration for Robust CLIP Test-Time Adaptation**[[paper](https://openaccess.thecvf.com/content/CVPR2025/papers/Huang_COSMIC_Clique-Oriented_Semantic_Multi-space_Integration_for_Robust_CLIP_Test-Time_Adaptation_CVPR_2025_paper.pdf)][code](https://github.com/hf618/COSMIC)]  
 `O-TPT`[CVPR'2025]**O-TPT: Orthogonality Constraints for Calibrating Test-time Prompt Tuning in Vision-Language Models**[[paper](https://openaccess.thecvf.com/content/CVPR2025/papers/Sharifdeen_O-TPT_Orthogonality_Constraints_for_Calibrating_Test-time_Prompt_Tuning_in_Vision-Language_CVPR_2025_paper.pdf)][[code](https://github.com/ashshaksharifdeen/O-TPT)]   
