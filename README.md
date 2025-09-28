@@ -27,6 +27,7 @@ Vision-Language Models**[[paper](https://openaccess.thecvf.com/content/CVPR2025/
 `WATT`[NeurIPS'2024]**WATT: Weight Average Test-Time Adaptation of CLIP**[[paper](https://proceedings.neurips.cc/paper_files/paper/2024/file/55d16334943f8728073e17139e5baa3d-Paper-Conference.pdf)][[code](https://github.com/Mehrdad-Noori/WATT)]  
 ## 2023
 `DiffTPT`[ICCV'2023]**Diverse Data Augmentation with Diffusions for Effective Test-time Prompt Tuning**[[paper](https://openaccess.thecvf.com/content/ICCV2023/papers/Feng_Diverse_Data_Augmentation_with_Diffusions_for_Effective_Test-time_Prompt_Tuning_ICCV_2023_paper.pdf)][[code](https://github.com/chunmeifeng/DiffTPT)]
+`PromptAlign`[NeurIPS'2023]**Align Your Prompts: Test-Time Prompting with Distribution Alignment for Zero-Shot Generalization**[[paper](https://proceedings.neurips.cc/paper_files/paper/2023/file/fe8debfd5a36ada52e038c8b2078b2ce-Paper-Conference.pdf)][[code](https://github.com/jameelhassan/PromptAlign)]   
 `SwapPrompt`[NeurIPS'2023]**SwapPrompt: Test-Time Prompt Adaptation for Vision-Language Models**[[paper](https://proceedings.neurips.cc/paper_files/paper/2023/file/cdd0640218a27e9e2c0e52e324e25db0-Paper-Conference.pdf)]
 ## 2022
 `TPT`[NeurIPS'2022]**Test-Time Prompt Tuning for Zero-Shot Generalization in Vision-Language Models**[[paper](https://openreview.net/pdf?id=e8PVEkSa4Fq)][[code](https://github.com/azshue/TPT)]
