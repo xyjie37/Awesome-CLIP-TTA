@@ -1,2 +1,2 @@
-# CLIP-TTA
+# Awesome-CLIP-TTA
 ## Description
