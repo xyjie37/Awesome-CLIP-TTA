@@ -16,6 +16,7 @@ This repository compiles papers on Test-Time Adaptation algorithms for the CLIP 
 `ECALP`[ICLR'2025]**Efficient and Context-Aware Label Propagation for Zero-/Few-Shot Training-Free Adaptation of Vision-Language Model**[[paper](https://openreview.net/pdf?id=D10yarGQNk)][[code](https://github.com/Yushu-Li/ECALP)]   
 `ZS-NTTA`[ICLR'2025]**Noisy Test-Time Adaptation in Vision-Language Models**[[paper](https://openreview.net/pdf?id=iylpeTI0Ql)][[code](https://github.com/tmlr-group/ZS-NTTA)]   
 `RA-TTA`[ICLR'2025]**RA-TTA: Retrieval-Augmented Test-Time Adaptation for Vision-Language Models**[[paper](https://openreview.net/pdf/86d3293ab2d788dc7a7a4cd22a101eba7e501237.pdf)][[code](https://github.com/kaist-dmlab/RA-TTA)]   
+`ReTA`[ACM MM'2025]**Advancing Reliable Test-Time Adaptation of Vision-Language Models under Visual Variations**[[paper](https://arxiv.org/pdf/2507.09500)][[code](https://github.com/Evelyn1ywliang/ReTA)]   
 `TIPPLE`[TIP'2025]**Task-to-Instance Prompt Learning for Vision-Language Models at Test Time**[[paper](https://ieeexplore.ieee.org/document/10925517)][[code](https://github.com/zhiheLu/TIPPLE)]  
 `PCPT`[PR'2025]**CTPT: Continual Test-time Prompt Tuning for vision-language models**[[paper](https://www.sciencedirect.com/science/article/pii/S0031320324010513)][[code](https://github.com/fanwang826/PCPT)]   
 `CRG`[ICME'2025]**Mitigating Cache Noise in Test-Time Adaptation for Large Vision-Language Models**[[paper](https://arxiv.org/pdf/2503.18334)]  
