@@ -2,6 +2,7 @@
 ## Description
 This repository compiles papers on Test-Time Adaptation algorithms for the CLIP model.
 ## 2025
+`SEraser`[AAAI'2024]**Spurious Feature Eraser: Stabilizing Test-Time Adaptation for Vision-Language Foundation Model**[[paper](https://ojs.aaai.org/index.php/AAAI/article/view/34124)][[code](https://github.com/MaHuanAAA/SEraser)]   
 `BCA`[CVPR'2025]**Bayesian Test-Time Adaptation for Vision-Language Models**[[paper](https://openaccess.thecvf.com/content/CVPR2025/papers/Zhou_Bayesian_Test-Time_Adaptation_for_Vision-Language_Models_CVPR_2025_paper.pdf)][[code](https://github.com/cuishuang99/BayesTTA)]    
 `COSMIC`[CVPR'2025]**COSMIC: Clique-Oriented Semantic Multi-space Integration for Robust CLIP Test-Time Adaptation**[[paper](https://openaccess.thecvf.com/content/CVPR2025/papers/Huang_COSMIC_Clique-Oriented_Semantic_Multi-space_Integration_for_Robust_CLIP_Test-Time_Adaptation_CVPR_2025_paper.pdf)][code](https://github.com/hf618/COSMIC)]  
 `SCAP`[CVPR'2025]**SCAP: Transductive Test-Time Adaptation via Supportive Clique-based Attribute Prompting**[[paper](https://openaccess.thecvf.com/content/CVPR2025/papers/Zhang_SCAP_Transductive_Test-Time_Adaptation_via_Supportive_Clique-based_Attribute_Prompting_CVPR_2025_paper.pdf)][[code](https://github.com/zhoujiahuan1991/CVPR2025-SCAP)]   
