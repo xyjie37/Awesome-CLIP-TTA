@@ -31,7 +31,7 @@ This repository curates papers on Test-Time Adaptation (TTA) algorithms for the 
 `ETTA`[BMVC'2025]**ETTA: Efficient Test-Time Adaptation for Vision-Language Models through Dynamic Embedding Updates**[[paper](https://arxiv.org/pdf/2508.05898)][[code](https://github.com/hamidreza-dastmalchi/ETTA)]   
 `ROSITA`[TMLR'2025]**Efficient Open Set Single Image Test Time Adaptation of Vision Language Models**[[paper](https://arxiv.org/pdf/2406.00481)][[code](https://github.com/manogna-s/ROSITA)]
 ## 2024
-`DART`[AAAI'2024]**DART: Dual-Modal Adaptive Online Prompting and Knowledge Retention for Test-Time Adaptation**[[paper](https://ojs.aaai.org/index.php/AAAI/article/view/29320)][[code](https://github.com/zhoujiahuan1991/AAAI2024-DART)]
+`DART`[AAAI'2024]**DART: Dual-Modal Adaptive Online Prompting and Knowledge Retention for Test-Time Adaptation**[[paper](https://ojs.aaai.org/index.php/AAAI/article/view/29320)][[code](https://github.com/zhoujiahuan1991/AAAI2024-DART)]   
 `ADAPROMPT`[AAAI'2024]**Robust Test-Time Adaptation for Zero-Shot Prompt Tuning**[[paper](https://ojs.aaai.org/index.php/AAAI/article/view/29611)][[code](https://github.com/zhangdingchu/Adaprompt)]  
 `TDA`[CVPR'2024]**Efficient Test-Time Adaptation of Vision-Language Models**[[paper](https://openaccess.thecvf.com/content/CVPR2024/papers/Karmanov_Efficient_Test-Time_Adaptation_of_Vision-Language_Models_CVPR_2024_paper.pdf)][[code](https://github.com/kdiAAA/TDA)]  
 `IST`[CVPR'2024]**Improved Self-Training for Test-Time Adaptation**[[paper](https://openaccess.thecvf.com/content/CVPR2024/papers/Ma_Improved_Self-Training_for_Test-Time_Adaptation_CVPR_2024_paper.pdf)][[code](https://github.com/JingInAI/IST4TTA)]  
