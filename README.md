@@ -2,6 +2,11 @@
 ## Description
 This repository compiles papers on Test-Time Adaptation algorithms for the CLIP model.
 ## 2025
+`BCA`[CVPR'2025]**Bayesian Test-Time Adaptation for Vision-Language Models**[[paper](https://openaccess.thecvf.com/content/CVPR2025/papers/Zhou_Bayesian_Test-Time_Adaptation_for_Vision-Language_Models_CVPR_2025_paper.pdf)][[code](https://github.com/cuishuang99/BayesTTA)]    
+`COSMIC`[CVPR'2025]**COSMIC: Clique-Oriented Semantic Multi-space Integration for Robust CLIP Test-Time Adaptation**[[paper](https://openaccess.thecvf.com/content/CVPR2025/papers/Huang_COSMIC_Clique-Oriented_Semantic_Multi-space_Integration_for_Robust_CLIP_Test-Time_Adaptation_CVPR_2025_paper.pdf)][code](https://github.com/hf618/COSMIC)]   
+`StatA`[CVPR'2025]**Realistic Test-Time Adaptation of Vision-Language Models**[[paper](https://openaccess.thecvf.com/content/CVPR2025/papers/Zanella_Realistic_Test-Time_Adaptation_of_Vision-Language_Models_CVPR_2025_paper.pdf)][[code](https://github.com/MaxZanella/StatA)]    
+`TAPT`[CVPR'2025]**TAPT: Test-Time Adversarial Prompt Tuning for Robust Inference in
+Vision-Language Models**[[paper](https://openaccess.thecvf.com/content/CVPR2025/papers/Wang_TAPT_Test-Time_Adversarial_Prompt_Tuning_for_Robust_Inference_in_Vision-Language_CVPR_2025_paper.pdf)][[code](https://github.com/xinwong/TAPT)]   
 `CLIPARTT`[WACV'2025]**CLIPArTT: Adaptation of CLIP to New Domains at Test Time**[[paper](https://openaccess.thecvf.com/content/WACV2025/papers/Hakim_CLIPArTT_Adaptation_of_CLIP_to_New_Domains_at_Test_Time_WACV_2025_paper.pdf)][[code](https://github.com/dosowiechi/CLIPArTT)]   
 `TPS`[WACV'2025]**Just Shift It: Test-Time Prototype Shifting for Zero-Shot Generalization with Vision-Language Models**[[paper](https://openaccess.thecvf.com/content/WACV2025/papers/Sui_Just_Shift_It_Test-Time_Prototype_Shifting_for_Zero-Shot_Generalization_with_WACV_2025_paper.pdf)][[code](https://github.com/elaine-sui/TPS)]   
 `TTL`[WACV'2025]**Test-Time Low Rank Adaptation via Confidence Maximization for Zero-Shot Generalization of Vision-Language Models**[[paper](https://openaccess.thecvf.com/content/WACV2025/papers/Imam_Test-Time_Low_Rank_Adaptation_via_Confidence_Maximization_for_Zero-Shot_Generalization_WACV_2025_paper.pdf)][[code](https://github.com/Razaimam45/TTL-Test-Time-Low-Rank-Adaptation)]
