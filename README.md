@@ -47,8 +47,8 @@ This repository curates papers on Test-Time Adaptation (TTA) algorithms for the 
 `PCoTTA`[IJCNN'2024]**Prompt-Based Memory Bank for Continual Test-Time Domain Adaptation in Vision-Language Models**[[paper](https://ieeexplore.ieee.org/document/10650069)]   
 `TTPT`[PRCV'2024]**Adapting Vision-Language Models to Open Classes via Test-Time Prompt Tuning**[[paper](https://link.springer.com/chapter/10.1007/978-981-97-8620-6_30)][[code](https://github.com/gaozhengqing/TTPT)]
 ## 2023
-`DiffTPT`[ICCV'2023]**Diverse Data Augmentation with Diffusions for Effective Test-time Prompt Tuning**[[paper](https://openaccess.thecvf.com/content/ICCV2023/papers/Feng_Diverse_Data_Augmentation_with_Diffusions_for_Effective_Test-time_Prompt_Tuning_ICCV_2023_paper.pdf)][[code](https://github.com/chunmeifeng/DiffTPT)]
-`PromptAlign`[NeurIPS'2023]**Align Your Prompts: Test-Time Prompting with Distribution Alignment for Zero-Shot Generalization**[[paper](https://proceedings.neurips.cc/paper_files/paper/2023/file/fe8debfd5a36ada52e038c8b2078b2ce-Paper-Conference.pdf)][[code](https://github.com/jameelhassan/PromptAlign)]   
+`DiffTPT`[ICCV'2023]**Diverse Data Augmentation with Diffusions for Effective Test-time Prompt Tuning**[[paper](https://openaccess.thecvf.com/content/ICCV2023/papers/Feng_Diverse_Data_Augmentation_with_Diffusions_for_Effective_Test-time_Prompt_Tuning_ICCV_2023_paper.pdf)][[code](https://github.com/chunmeifeng/DiffTPT)]   
+`PromptAlign`[NeurIPS'2023]**Align Your Prompts: Test-Time Prompting with Distribution Alignment for Zero-Shot Generalization**[[paper](https://proceedings.neurips.cc/paper_files/paper/2023/file/fe8debfd5a36ada52e038c8b2078b2ce-Paper-Conference.pdf)][[code](https://github.com/jameelhassan/PromptAlign)]    
 `SwapPrompt`[NeurIPS'2023]**SwapPrompt: Test-Time Prompt Adaptation for Vision-Language Models**[[paper](https://proceedings.neurips.cc/paper_files/paper/2023/file/cdd0640218a27e9e2c0e52e324e25db0-Paper-Conference.pdf)]
 ## 2022
 `TPT`[NeurIPS'2022]**Test-Time Prompt Tuning for Zero-Shot Generalization in Vision-Language Models**[[paper](https://openreview.net/pdf?id=e8PVEkSa4Fq)][[code](https://github.com/azshue/TPT)]
