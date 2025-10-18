@@ -44,6 +44,7 @@ This repository curates papers on Test-Time Adaptation (TTA) algorithms for the 
 `HisTPT`[NeurIPS'2024]**Historical Test-time Prompt Tuning for Vision Foundation Models**[[paper](https://proceedings.neurips.cc/paper_files/paper/2024/file/178ae4ba29022eb7bf509c2e27bc8ab8-Paper-Conference.pdf)]   
 `ZERO`[NeurIPS'2024]**Frustratingly Easy Test-Time Adaptation of Vision-Language Models**[[paper](https://proceedings.neurips.cc/paper_files/paper/2024/file/e92cb6f981a2cacb2a710ecaa0d7b141-Paper-Conference.pdf)][[code](https://github.com/FarinaMatteo/zero)]  
 `WATT`[NeurIPS'2024]**WATT: Weight Average Test-Time Adaptation of CLIP**[[paper](https://proceedings.neurips.cc/paper_files/paper/2024/file/55d16334943f8728073e17139e5baa3d-Paper-Conference.pdf)][[code](https://github.com/Mehrdad-Noori/WATT)]   
+`VTE`[ECCV'2024]**A Lost Opportunity for Vision-Language Models: A Comparative Study of Online Test-Time Adaptation for Vision-Language Models**[[paper](https://link.springer.com/chapter/10.1007/978-3-031-91672-4_8)][[code](https://github.com/mariodoebler/test-time-adaptation)]   
 `PCoTTA`[IJCNN'2024]**Prompt-Based Memory Bank for Continual Test-Time Domain Adaptation in Vision-Language Models**[[paper](https://ieeexplore.ieee.org/document/10650069)]   
 `TTPT`[PRCV'2024]**Adapting Vision-Language Models to Open Classes via Test-Time Prompt Tuning**[[paper](https://link.springer.com/chapter/10.1007/978-981-97-8620-6_30)][[code](https://github.com/gaozhengqing/TTPT)]
 ## 2023
