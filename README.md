@@ -2,6 +2,13 @@
 ## Description
 This repository curates papers on Test-Time Adaptation (TTA) algorithms for the CLIP model. The papers in this repository adhere to the strict standard of Online Test-time Adaptation (OTTA). This standard is characterized by the use of only unlabeled test data, which arrives in sequential batches. The model is then adjusted incrementally with each batch to produce predictions.
 ## 2025
+`CLIPTTA`[NeurIPS'2025]**CLIPTTA: Robust Contrastive Vision-Language Test-Time Adaptation**[[paper](https://openreview.net/pdf/4d1e7879dbb8e6fe543f0387ccdbbdd18b0a1cdb.pdf)][[code](https://github.com/MarcLafon/cliptta)]   
+`DOTA`[NeurIPS'2025]**DOTA: DistributiOnal Test-time Adaptation of Vision-Language Models**[[paper](https://openreview.net/pdf?id=2T6QXSP8Cf)][[code](https://github.com/skylineeeeen/DOTA)]   
+`Mint`[NeurIPS'2025]**Mint: A Simple Test-Time Adaptation of VisionLanguage Models against Common Corruptions**[[paper](https://openreview.net/pdf?id=yJpBVE4vfo)][[code](https://github.com/baowenxuan/Mint)]   
+`SCA`[NeurIPS'2025]**Statistics Caching Test-Time Adaptation for Vision-Language Models**[[paper](https://openreview.net/pdf?id=iqsjzVqmWF)][[code](https://github.com/Yuqin-G/SCA)]   
+`MLMP`[NeurIPS'2025]**Test-Time Adaptation of Vision-Language Models for Open-Vocabulary Semantic Segmentation**[[paper](https://openreview.net/pdf?id=CH76rSKWZr)][[code](https://github.com/dosowiechi/MLMP)]  
+`STS`[NeurIPS'2025]**Test-Time Spectrum-Aware Latent Steering for Zero-Shot Generalization in Vision-Language Models**[[paper](https://openreview.net/pdf?id=eV2Y8Gt6JY)][[code](https://github.com/kdafnis/STS)]   
+`SSG`[NeurIPS'2025]**Training-Free Test-Time Adaptation via Shape and Style Guidance for Vision-Language Models**[[paper](https://openreview.net/pdf?id=OF7OLxvY0t)]   
 `B2TPT`[AAAI'2025]**Black-Box Test-Time Prompt Tuning for Vision-Language Models**[[paper](https://ojs.aaai.org/index.php/AAAI/article/view/32652)][[code](https://github.com/MFAaaaaaa/B2TPT)]   
 `SEraser`[AAAI'2025]**Spurious Feature Eraser: Stabilizing Test-Time Adaptation for Vision-Language Foundation Model**[[paper](https://ojs.aaai.org/index.php/AAAI/article/view/34124)][[code](https://github.com/MaHuanAAA/SEraser)]   
 `BCA`[CVPR'2025]**Bayesian Test-Time Adaptation for Vision-Language Models**[[paper](https://openaccess.thecvf.com/content/CVPR2025/papers/Zhou_Bayesian_Test-Time_Adaptation_for_Vision-Language_Models_CVPR_2025_paper.pdf)][[code](https://github.com/cuishuang99/BayesTTA)]    
