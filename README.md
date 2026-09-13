@@ -2,6 +2,7 @@
 ## Description
 This repository curates papers on Test-Time Adaptation (TTA) algorithms for the CLIP model. The papers in this repository adhere to the strict standard of Online Test-time Adaptation (OTTA). This standard is characterized by the use of only unlabeled test data, which arrives in sequential batches. The model is then adjusted incrementally with each batch to produce predictions.
 ## 2026
+`LTTA`[ICLR'2026]**Long-tailed Test-Time Adaptation for Vision-Language Models**[[paper](https://iclr.cc/virtual/2026/poster/10007886)][[code](https://github.com/xuc865/LTTA)]      
 `TaTa`[ICASSP'2026]**Training-Free Test-Time Adaptation with Brownian Distance Covariance in Vision-Language Models**[[paper](https://arxiv.org/pdf/2601.23253)]   
 `DHPT`[TCVST'2026]**DHPT: Dual-Modality Heterogeneous Prompt Tuning for Online Test-time Adaption in Vision-language Models**[[paper](https://ieeexplore.ieee.org/abstract/document/11363627)]      
 ## 2025
