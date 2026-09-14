@@ -6,7 +6,8 @@ This repository curates papers on Test-Time Adaptation (TTA) algorithms for the 
 `FGA`[ICLR'2026]**Flatness Guided Test-Time Adaptation for Vision-Language Models**[[paper](https://proceedings.iclr.cc/paper_files/paper/2026/file/2ac9a7afd788c75c159be5ca80496176-Paper-Conference.pdf)]         
 `SCTTA`[TIP'2026]**Style-Aware Contrastive Test-Time Adaptation: A Dual-Cache Model for Robust Vision-Language Alignment**[[paper](https://ieeexplore.ieee.org/document/11589538)][[code](https://github.com/alusi123/SCTTA)]          
 `TaTa`[ICASSP'2026]**Training-Free Test-Time Adaptation with Brownian Distance Covariance in Vision-Language Models**[[paper](https://arxiv.org/pdf/2601.23253)]   
-`NEAT`[TPAMI'2026]**Negation-Aware Test-Time Adaptation for Vision-Language Models**[[paper](https://ieeexplore.ieee.org/abstract/document/11561105)][[code](https://github.com/hhc1997/NEAT)]             
+`NEAT`[TPAMI'2026]**Negation-Aware Test-Time Adaptation for Vision-Language Models**[[paper](https://ieeexplore.ieee.org/abstract/document/11561105)][[code](https://github.com/hhc1997/NEAT)] 
+`BPRE`[TMM'2026]**Bidirectional Prototype-Reward Co-Evolution for Test-Time Adaptation of Vision-Language Models**[[paper](https://ieeexplore.ieee.org/abstract/document/11523647)]           
 `DHPT`[TCVST'2026]**DHPT: Dual-Modality Heterogeneous Prompt Tuning for Online Test-time Adaption in Vision-language Models**[[paper](https://ieeexplore.ieee.org/abstract/document/11363627)]      
 ## 2025
 `CLIPTTA`[NeurIPS'2025]**CLIPTTA: Robust Contrastive Vision-Language Test-Time Adaptation**[[paper](https://openreview.net/pdf/4d1e7879dbb8e6fe543f0387ccdbbdd18b0a1cdb.pdf)][[code](https://github.com/MarcLafon/cliptta)]   
