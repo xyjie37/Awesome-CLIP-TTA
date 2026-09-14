@@ -6,6 +6,7 @@ This repository curates papers on Test-Time Adaptation (TTA) algorithms for the 
 `FGA`[ICLR'2026]**Flatness Guided Test-Time Adaptation for Vision-Language Models**[[paper](https://proceedings.iclr.cc/paper_files/paper/2026/file/2ac9a7afd788c75c159be5ca80496176-Paper-Conference.pdf)]         
 `SCTTA`[TIP'2026]**Style-Aware Contrastive Test-Time Adaptation: A Dual-Cache Model for Robust Vision-Language Alignment**[[paper](https://ieeexplore.ieee.org/document/11589538)][[code](https://github.com/alusi123/SCTTA)]          
 `TaTa`[ICASSP'2026]**Training-Free Test-Time Adaptation with Brownian Distance Covariance in Vision-Language Models**[[paper](https://arxiv.org/pdf/2601.23253)]   
+`NEAT`[TPAMI'2026]**Negation-Aware Test-Time Adaptation for Vision-Language Models**[[paper](https://ieeexplore.ieee.org/abstract/document/11561105)][[code](https://github.com/hhc1997/NEAT)]             
 `DHPT`[TCVST'2026]**DHPT: Dual-Modality Heterogeneous Prompt Tuning for Online Test-time Adaption in Vision-language Models**[[paper](https://ieeexplore.ieee.org/abstract/document/11363627)]      
 ## 2025
 `CLIPTTA`[NeurIPS'2025]**CLIPTTA: Robust Contrastive Vision-Language Test-Time Adaptation**[[paper](https://openreview.net/pdf/4d1e7879dbb8e6fe543f0387ccdbbdd18b0a1cdb.pdf)][[code](https://github.com/MarcLafon/cliptta)]   
@@ -15,6 +16,7 @@ This repository curates papers on Test-Time Adaptation (TTA) algorithms for the 
 `MLMP`[NeurIPS'2025]**Test-Time Adaptation of Vision-Language Models for Open-Vocabulary Semantic Segmentation**[[paper](https://openreview.net/pdf?id=CH76rSKWZr)][[code](https://github.com/dosowiechi/MLMP)]  
 `STS`[NeurIPS'2025]**Test-Time Spectrum-Aware Latent Steering for Zero-Shot Generalization in Vision-Language Models**[[paper](https://openreview.net/pdf?id=eV2Y8Gt6JY)][[code](https://github.com/kdafnis/STS)]   
 `SSG`[NeurIPS'2025]**Training-Free Test-Time Adaptation via Shape and Style Guidance for Vision-Language Models**[[paper](https://openreview.net/pdf?id=OF7OLxvY0t)]   
+`tta-vlm`[NeurIPS'2025 D&B]**The Illusion of Progress? A Critical Look at Test-Time Adaptation for Vision-Language Models**[[paper](https://proceedings.neurips.cc/paper_files/paper/2025/file/b57ddd8726c217a6fef9a48ce3e09ffd-Paper-Datasets_and_Benchmarks_Track.pdf)][[code](https://github.com/TomSheng21/tta-vlm)]             
 `B2TPT`[AAAI'2025]**Black-Box Test-Time Prompt Tuning for Vision-Language Models**[[paper](https://ojs.aaai.org/index.php/AAAI/article/view/32652)][[code](https://github.com/MFAaaaaaa/B2TPT)]   
 `SEraser`[AAAI'2025]**Spurious Feature Eraser: Stabilizing Test-Time Adaptation for Vision-Language Foundation Model**[[paper](https://ojs.aaai.org/index.php/AAAI/article/view/34124)][[code](https://github.com/MaHuanAAA/SEraser)]   
 `BCA`[CVPR'2025]**Bayesian Test-Time Adaptation for Vision-Language Models**[[paper](https://openaccess.thecvf.com/content/CVPR2025/papers/Zhou_Bayesian_Test-Time_Adaptation_for_Vision-Language_Models_CVPR_2025_paper.pdf)][[code](https://github.com/cuishuang99/BayesTTA)]    
