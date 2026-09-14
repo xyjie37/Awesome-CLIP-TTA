@@ -2,9 +2,10 @@
 ## Description
 This repository curates papers on Test-Time Adaptation (TTA) algorithms for the CLIP model. The papers in this repository adhere to the strict standard of Online Test-time Adaptation (OTTA). This standard is characterized by the use of only unlabeled test data, which arrives in sequential batches. The model is then adjusted incrementally with each batch to produce predictions.
 ## 2026
-`LTTA`[ICLR'2026]**Long-tailed Test-Time Adaptation for Vision-Language Models**[[paper](https://iclr.cc/virtual/2026/poster/10007886)][[code](https://github.com/xuc865/LTTA)]     
+`LTTA`[ICLR'2026]**Long-tailed Test-Time Adaptation for Vision-Language Models**[[paper](https://iclr.cc/virtual/2026/poster/10007886)][[code](https://github.com/xuc865/LTTA)]   
 `FGA`[ICLR'2026]**Flatness Guided Test-Time Adaptation for Vision-Language Models**[[paper](https://proceedings.iclr.cc/paper_files/paper/2026/file/2ac9a7afd788c75c159be5ca80496176-Paper-Conference.pdf)]         
-`BITTA`[ICLR'2026]**Bilateral Information-aware Test-time Adaptation for Vision-Language Models**[[paper](https://proceedings.iclr.cc/paper_files/paper/2026/file/6454dcd80b5373daaa97e53ce32c78a1-Paper-Conference.pdf)][[code](https://github.com/super-jw/BITTA)]        
+`BITTA`[ICLR'2026]**Bilateral Information-aware Test-time Adaptation for Vision-Language Models**[[paper](https://proceedings.iclr.cc/paper_files/paper/2026/file/6454dcd80b5373daaa97e53ce32c78a1-Paper-Conference.pdf)][[code](https://github.com/super-jw/BITTA)]      
+`VITA`[ICLR'2026]**VITA: Zero-Shot Value Functions via Test-Time Adaptation of Vision–Language Models**[[paper](https://arxiv.org/abs/2506.10085)]        
 `Uni-Adapter`[AAAI'2026]**Adapt-As-You-Walk Through the Clouds: Training-Free Online Test-Time Adaptation of 3D Vision-Language Foundation Models**[[paper](https://ojs.aaai.org/index.php/AAAI/article/view/37888)][[code](https://github.com/Mehran-TAM/Uni-Adapter)]  
 `DANCE`[ACL'2026 findings]**DANCE: Diversity-attended Dynamic Caching with Asymmetric Quantization for Test-Time Adaptation of Vision-Language Models**[[paper](https://aclanthology.org/2026.findings-acl.1860.pdf)]                
 `TaTa`[ICASSP'2026]**Training-Free Test-Time Adaptation with Brownian Distance Covariance in Vision-Language Models**[[paper](https://arxiv.org/pdf/2601.23253)]   
