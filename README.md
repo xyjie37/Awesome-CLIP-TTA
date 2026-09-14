@@ -9,7 +9,8 @@ This repository curates papers on Test-Time Adaptation (TTA) algorithms for the 
 `TaTa`[ICASSP'2026]**Training-Free Test-Time Adaptation with Brownian Distance Covariance in Vision-Language Models**[[paper](https://arxiv.org/pdf/2601.23253)]   
 `NEAT`[TPAMI'2026]**Negation-Aware Test-Time Adaptation for Vision-Language Models**[[paper](https://ieeexplore.ieee.org/abstract/document/11561105)][[code](https://github.com/hhc1997/NEAT)] 
 `BPRE`[TMM'2026]**Bidirectional Prototype-Reward Co-Evolution for Test-Time Adaptation of Vision-Language Models**[[paper](https://ieeexplore.ieee.org/abstract/document/11523647)]           
-`DHPT`[TCVST'2026]**DHPT: Dual-Modality Heterogeneous Prompt Tuning for Online Test-time Adaption in Vision-language Models**[[paper](https://ieeexplore.ieee.org/abstract/document/11363627)]      
+`DHPT`[TCVST'2026]**DHPT: Dual-Modality Heterogeneous Prompt Tuning for Online Test-time Adaption in Vision-language Models**[[paper](https://ieeexplore.ieee.org/abstract/document/11363627)]        
+`PseudoAdapter`[TMLR'2026]**Test-Time Adaptation of Vision-Language Models with Low-Rank Pseudo-Consistency**[[paper](https://openreview.net/pdf?id=GDw4pvX9aG)]
 ## 2025
 `CLIPTTA`[NeurIPS'2025]**CLIPTTA: Robust Contrastive Vision-Language Test-Time Adaptation**[[paper](https://openreview.net/pdf/4d1e7879dbb8e6fe543f0387ccdbbdd18b0a1cdb.pdf)][[code](https://github.com/MarcLafon/cliptta)]   
 `DOTA`[NeurIPS'2025]**DOTA: DistributiOnal Test-time Adaptation of Vision-Language Models**[[paper](https://openreview.net/pdf?id=2T6QXSP8Cf)][[code](https://github.com/skylineeeeen/DOTA)]   
