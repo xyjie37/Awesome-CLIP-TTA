@@ -4,6 +4,7 @@ This repository curates papers on Test-Time Adaptation (TTA) algorithms for the 
 ## 2026
 `LTTA`[ICLR'2026]**Long-tailed Test-Time Adaptation for Vision-Language Models**[[paper](https://iclr.cc/virtual/2026/poster/10007886)][[code](https://github.com/xuc865/LTTA)]     
 `FGA`[ICLR'2026]**Flatness Guided Test-Time Adaptation for Vision-Language Models**[[paper](https://proceedings.iclr.cc/paper_files/paper/2026/file/2ac9a7afd788c75c159be5ca80496176-Paper-Conference.pdf)]         
+`BITTA`[ICLR'2026]**Bilateral Information-aware Test-time Adaptation for Vision-Language Models**[[paper](https://proceedings.iclr.cc/paper_files/paper/2026/file/6454dcd80b5373daaa97e53ce32c78a1-Paper-Conference.pdf)][[code](https://github.com/super-jw/BITTA)]           
 `SCTTA`[TIP'2026]**Style-Aware Contrastive Test-Time Adaptation: A Dual-Cache Model for Robust Vision-Language Alignment**[[paper](https://ieeexplore.ieee.org/document/11589538)][[code](https://github.com/alusi123/SCTTA)]          
 `TaTa`[ICASSP'2026]**Training-Free Test-Time Adaptation with Brownian Distance Covariance in Vision-Language Models**[[paper](https://arxiv.org/pdf/2601.23253)]   
 `NEAT`[TPAMI'2026]**Negation-Aware Test-Time Adaptation for Vision-Language Models**[[paper](https://ieeexplore.ieee.org/abstract/document/11561105)][[code](https://github.com/hhc1997/NEAT)] 
