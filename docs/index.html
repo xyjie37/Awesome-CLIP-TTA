@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Awesome CLIP Test-Time Adaptation</title>
+<meta name="description" content="A curated list of papers on (Online) Test-Time Adaptation for CLIP / Vision-Language Models">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FAFAF9;
+    --surface: #FFFFFF;
+    --border: #E7E5E4;
+    --text: #1C1917;
+    --text-2: #57534E;
+    --text-3: #A8A29E;
+    --accent: #4F46E5;
+    --accent-soft: #EEF2FF;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 4px 16px rgba(28,25,23,.05);
+    --radius: 12px;
+  }
+  [data-theme="dark"] {
+    --bg: #0C0A09;
+    --surface: #1C1917;
+    --border: #292524;
+    --text: #FAFAF9;
+    --text-2: #A8A29E;
+    --text-3: #57534E;
+    --accent: #818CF8;
+    --accent-soft: #1E1B4B;
+    --shadow: 0 1px 2px rgba(0,0,0,.2), 0 4px 16px rgba(0,0,0,.25);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    transition: background .25s, color .25s;
+  }
+  .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+  /* ---------- Top bar ---------- */
+  .topbar {
+    position: sticky; top: 0; z-index: 50;
+    background: color-mix(in srgb, var(--bg) 82%, transparent);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .topbar-inner { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 15px; letter-spacing: -.01em; text-decoration: none; color: var(--text); }
+  .brand .logo {
+    width: 28px; height: 28px; border-radius: 8px;
+    background: linear-gradient(135deg, #4F46E5, #0891B2);
+    display: grid; place-items: center; color: #fff; font-size: 14px;
+  }
+  .topbar-actions { display: flex; align-items: center; gap: 8px; }
+  .icon-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 7px 12px; border-radius: 8px; border: 1px solid var(--border);
+    background: var(--surface); color: var(--text-2);
+    font-size: 13px; font-weight: 500; cursor: pointer; text-decoration: none;
+    transition: all .15s;
+  }
+  .icon-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ---------- Hero ---------- */
+  .hero { padding: 72px 0 40px; text-align: center; }
+  .hero .kicker {
+    display: inline-block; padding: 4px 12px; border-radius: 999px;
+    background: var(--accent-soft); color: var(--accent);
+    font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-size: clamp(30px, 5vw, 44px); font-weight: 800; letter-spacing: -.03em; line-height: 1.15;
+    background: linear-gradient(120deg, var(--text) 40%, var(--accent));
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .hero p { max-width: 640px; margin: 16px auto 0; color: var(--text-2); font-size: 16px; }
+  .stats { display: flex; justify-content: center; gap: 12px; margin-top: 32px; flex-wrap: wrap; }
+  .stat {
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 14px 24px; box-shadow: var(--shadow); min-width: 120px;
+  }
+  .stat .num { font-size: 24px; font-weight: 800; letter-spacing: -.02em; font-family: 'JetBrains Mono', monospace; }
+  .stat .label { font-size: 12px; color: var(--text-3); font-weight: 500; text-transform: uppercase; letter-spacing: .06em; }
+
+  /* ---------- Filter bar ---------- */
+  .filterbar {
+    position: sticky; top: 60px; z-index: 40;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    padding: 14px 0; border-bottom: 1px solid var(--border);
+  }
+  .filter-row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  .search {
+    flex: 1; min-width: 220px; display: flex; align-items: center; gap: 8px;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+    padding: 9px 14px; transition: border-color .15s, box-shadow .15s;
+  }
+  .search:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+  .search input {
+    border: none; outline: none; background: none; width: 100%;
+    font: inherit; font-size: 14px; color: var(--text);
+  }
+  .search input::placeholder { color: var(--text-3); }
+  select, .toggle {
+    font: inherit; font-size: 13px; font-weight: 500;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+    padding: 9px 12px; color: var(--text-2); cursor: pointer; outline: none;
+  }
+  .chips { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+  .chip {
+    padding: 5px 14px; border-radius: 999px; font-size: 13px; font-weight: 600;
+    border: 1px solid var(--border); background: var(--surface); color: var(--text-2);
+    cursor: pointer; transition: all .15s; font-family: 'JetBrains Mono', monospace;
+  }
+  .chip:hover { border-color: var(--accent); color: var(--accent); }
+  .chip.active { background: var(--text); border-color: var(--text); color: var(--bg); }
+  .result-count { font-size: 13px; color: var(--text-3); margin-left: auto; font-family: 'JetBrains Mono', monospace; }
+
+  /* ---------- Paper list ---------- */
+  .papers { padding: 24px 0 80px; }
+  .year-block { margin-bottom: 36px; }
+  .year-head {
+    display: flex; align-items: baseline; gap: 12px; margin: 28px 0 14px;
+  }
+  .year-head h2 { font-size: 22px; font-weight: 800; letter-spacing: -.02em; font-family: 'JetBrains Mono', monospace; }
+  .year-head .count { font-size: 13px; color: var(--text-3); font-weight: 500; }
+  .year-head .line { flex: 1; height: 1px; background: var(--border); }
+
+  .card {
+    display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 6px 16px;
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 16px 20px; margin-bottom: 10px; box-shadow: var(--shadow);
+    transition: transform .15s, border-color .15s, box-shadow .15s;
+  }
+  .card:hover { transform: translateY(-1px); border-color: color-mix(in srgb, var(--accent) 40%, var(--border)); }
+  .card-main { min-width: 0; }
+  .card-title { font-size: 15px; font-weight: 600; letter-spacing: -.01em; line-height: 1.45; }
+  .card-title .method {
+    font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600;
+    color: var(--accent); background: var(--accent-soft);
+    padding: 2px 8px; border-radius: 6px; margin-right: 8px; white-space: nowrap;
+  }
+  .card-meta { display: flex; align-items: center; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+  .venue-chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 999px;
+    color: var(--chip-color); background: color-mix(in srgb, var(--chip-color) 10%, transparent);
+    border: 1px solid color-mix(in srgb, var(--chip-color) 25%, transparent);
+    font-family: 'JetBrains Mono', monospace; white-space: nowrap;
+  }
+  .venue-chip::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--chip-color); }
+  .card-links { display: flex; gap: 8px; align-items: center; justify-content: flex-end; }
+  .link-btn {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-size: 13px; font-weight: 600; text-decoration: none;
+    padding: 6px 14px; border-radius: 8px; border: 1px solid var(--border);
+    color: var(--text-2); background: var(--bg); transition: all .15s; white-space: nowrap;
+  }
+  .link-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+  .link-btn.primary { color: var(--accent); border-color: color-mix(in srgb, var(--accent) 35%, var(--border)); }
+  .empty { text-align: center; color: var(--text-3); padding: 60px 0; font-size: 15px; }
+
+  /* ---------- Footer ---------- */
+  footer { border-top: 1px solid var(--border); padding: 32px 0 48px; text-align: center; color: var(--text-3); font-size: 13px; }
+  footer a { color: var(--accent); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  @media (max-width: 640px) {
+    .card { grid-template-columns: 1fr; }
+    .card-links { justify-content: flex-start; }
+    .hero { padding: 48px 0 28px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="container topbar-inner">
+    <a class="brand" href="#top"><span class="logo">🚀</span> Awesome CLIP TTA</a>
+    <div class="topbar-actions">
+      <button class="icon-btn" id="themeToggle" title="Toggle dark mode">🌙</button>
+      <a class="icon-btn" href="https://github.com/xyjie37/Awesome-CLIP-TTA" target="_blank" rel="noopener">★ GitHub</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero container">
+    <span class="kicker">Paper Collection</span>
+    <h1>Awesome CLIP Test-Time Adaptation</h1>
+    <p>A curated list of papers on <strong>(Online) Test-Time Adaptation</strong> for CLIP / Vision-Language Models — unlabeled test data arrives in sequential batches, and the model adapts incrementally with each batch.</p>
+    <div class="stats" id="stats"></div>
+  </section>
+
+  <div class="filterbar">
+    <div class="container">
+      <div class="filter-row">
+        <label class="search">🔍 <input id="searchInput" type="text" placeholder="Search by title or method…" autocomplete="off"></label>
+        <select id="venueSelect"><option value="">All venues</option></select>
+        <label class="toggle" style="display:flex;align-items:center;gap:6px;">
+          <input type="checkbox" id="codeOnly"> Code available
+        </label>
+        <span class="result-count" id="resultCount"></span>
+      </div>
+      <div class="chips" id="yearChips"></div>
+    </div>
+  </div>
+
+  <section class="papers container" id="papers"></section>
+</main>
+
+<footer>
+  <div class="container">
+    Data sourced from <a href="https://github.com/xyjie37/Awesome-CLIP-TTA" target="_blank" rel="noopener">Awesome-CLIP-TTA</a> ·
+    Regenerated with <code>scripts/build_data.py</code> ·
+    Contributions welcome via pull request
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script>
+(function () {
+  const { papers, venues, years } = DATA;
+
+  // ---------- theme ----------
+  const root = document.documentElement;
+  const saved = localStorage.getItem('tta-theme');
+  if (saved) root.dataset.theme = saved;
+  else if (window.matchMedia('(prefers-color-scheme: dark)').matches) root.dataset.theme = 'dark';
+  const themeBtn = document.getElementById('themeToggle');
+  const syncThemeIcon = () => themeBtn.textContent = root.dataset.theme === 'dark' ? '☀️' : '🌙';
+  syncThemeIcon();
+  themeBtn.addEventListener('click', () => {
+    root.dataset.theme = root.dataset.theme === 'dark' ? '' : 'dark';
+    localStorage.setItem('tta-theme', root.dataset.theme);
+    syncThemeIcon();
+  });
+
+  // ---------- stats ----------
+  const codeCount = papers.filter(p => p.code).length;
+  document.getElementById('stats').innerHTML = [
+    [papers.length, 'Papers'],
+    [codeCount, 'With Code'],
+    [venues.length, 'Venues'],
+    [years.length, 'Years'],
+  ].map(([n, l]) => `<div class="stat"><div class="num">${n}</div><div class="label">${l}</div></div>`).join('');
+
+  // ---------- filters ----------
+  const state = { query: '', year: null, venue: '', codeOnly: false };
+  const searchInput = document.getElementById('searchInput');
+  const venueSelect = document.getElementById('venueSelect');
+  const codeOnly = document.getElementById('codeOnly');
+  const yearChips = document.getElementById('yearChips');
+  const papersEl = document.getElementById('papers');
+  const resultCount = document.getElementById('resultCount');
+
+  venues.forEach(v => {
+    const opt = document.createElement('option');
+    opt.value = v; opt.textContent = v;
+    venueSelect.appendChild(opt);
+  });
+
+  ['All', ...years].forEach(y => {
+    const chip = document.createElement('button');
+    chip.className = 'chip' + (y === 'All' ? ' active' : '');
+    chip.textContent = y;
+    chip.addEventListener('click', () => {
+      state.year = y === 'All' ? null : y;
+      yearChips.querySelectorAll('.chip').forEach(c => c.classList.toggle('active', c === chip));
+      render();
+    });
+    yearChips.appendChild(chip);
+  });
+
+  let debounce;
+  searchInput.addEventListener('input', e => {
+    clearTimeout(debounce);
+    debounce = setTimeout(() => { state.query = e.target.value.trim().toLowerCase(); render(); }, 120);
+  });
+  venueSelect.addEventListener('change', e => { state.venue = e.target.value; render(); });
+  codeOnly.addEventListener('change', e => { state.codeOnly = e.target.checked; render(); });
+
+  // ---------- render ----------
+  function match(p) {
+    if (state.year && p.year !== state.year) return false;
+    if (state.venue && p.venueFamily !== state.venue) return false;
+    if (state.codeOnly && !p.code) return false;
+    if (state.query) {
+      const hay = (p.title + ' ' + p.method).toLowerCase();
+      if (!hay.includes(state.query)) return false;
+    }
+    return true;
+  }
+
+  function cardHTML(p) {
+    const method = p.method ? `<span class="method">${esc(p.method)}</span>` : '';
+    const paper = p.paper ? `<a class="link-btn primary" href="${p.paper}" target="_blank" rel="noopener">📄 Paper</a>` : '';
+    const code = p.code ? `<a class="link-btn" href="${p.code}" target="_blank" rel="noopener">💻 Code</a>` : '';
+    return `<article class="card">
+      <div class="card-main">
+        <div class="card-title">${method}${esc(p.title)}</div>
+        <div class="card-meta"><span class="venue-chip" style="--chip-color:${p.color}">${esc(p.venue)}</span></div>
+      </div>
+      <div class="card-links">${paper}${code}</div>
+    </article>`;
+  }
+
+  function esc(s) {
+    return s.replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  }
+
+  function render() {
+    const filtered = papers.filter(match);
+    resultCount.textContent = `${filtered.length} / ${papers.length} papers`;
+    if (!filtered.length) {
+      papersEl.innerHTML = '<div class="empty">No papers match the current filters.</div>';
+      return;
+    }
+    let html = '';
+    years.forEach(y => {
+      const group = filtered.filter(p => p.year === y);
+      if (!group.length) return;
+      html += `<div class="year-block">
+        <div class="year-head"><h2>${y}</h2><span class="count">${group.length} paper${group.length > 1 ? 's' : ''}</span><span class="line"></span></div>
+        ${group.map(cardHTML).join('')}
+      </div>`;
+    });
+    papersEl.innerHTML = html;
+  }
+
+  render();
+})();
+</script>
+</body>
+</html>
