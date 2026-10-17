@@ -17,11 +17,11 @@
     --border: #e6e6e6;
     --hover: #fafafa;
     --track: #f0f0f0;
-    --zebra: #f5f8ff;
-    --zebra-hover: #ecf2ff;
+    --zebra: #f6f8fa;
+    --zebra-hover: #eef1f4;
     --accent: #2e86f0;
     --accent-hover: #1d6fd8;
-    --bar-grad: linear-gradient(90deg, #b7cff9 0%, #9dbdf6 100%);
+    --bar: #007cff;
   }
   html.dark {
     --bg: #0a0a0a;
@@ -31,11 +31,11 @@
     --border: #262626;
     --hover: #141414;
     --track: #1f1f1f;
-    --zebra: #0e1524;
-    --zebra-hover: #141e33;
+    --zebra: #161b22;
+    --zebra-hover: #1c2128;
     --accent: #6da2f8;
     --accent-hover: #8fb8fa;
-    --bar-grad: linear-gradient(90deg, #5479c9 0%, #4668b3 100%);
+    --bar: #007cff;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
@@ -103,10 +103,11 @@
   .bar-row:hover .bar-label, .bar-row.active .bar-label { color: var(--fg); }
   .bar-track { height: 20px; background: var(--track); border-radius: 3px; overflow: hidden; }
   .bar-fill {
-    display: block; height: 100%; background: var(--bar-grad); border-radius: 3px;
+    display: block; height: 100%; background: var(--bar); border-radius: 3px;
     transition: width .5s cubic-bezier(.2,.8,.2,1);
   }
-  .bar-row.active .bar-fill { filter: brightness(0.92); }
+  .bar-row.active .bar-fill { background: #002f5b; }
+  html.dark .bar-row.active .bar-fill { background: #66b2ff; }
   .bar-count {
     font-size: 12px; color: var(--fg-3); font-variant-numeric: tabular-nums; text-align: right;
   }
