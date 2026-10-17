@@ -40,17 +40,31 @@ This repository curates papers on **Test-Time Adaptation (TTA)** algorithms for 
 | A^2Memory | Learning to Memorize with Attributive and Associative Memory for Online Test-Time Adaptation of Vision-Language Models | ICML'2026 | [📄 Paper](https://icml.cc/virtual/2026/poster/66500) |
 | D2O | D^2O: A Dual Debiasing Operator for Training-Free Test-Time Adaptation of Vision–Language Models | ICML'2026 | [📄 Paper](https://icml.cc/virtual/2026/poster/65392) / [💻 Code](https://github.com/MAiTL-Group/D2O) |
 | FPP | Improving Calibration in Test-Time Prompt Tuning for Vision-Language Models via Data-Free Flatness-Aware Prompt Pretraining | CVPR'2026 | [📄 Paper](https://openaccess.thecvf.com/content/CVPR2026/html/Jang_Improving_Calibration_in_Test-Time_Prompt_Tuning_for_Vision-Language_Models_via_CVPR_2026_paper.html) / [💻 Code](https://github.com/YonseiML/fpp) |
+| Ramen | Ramen: Robust Test-Time Adaptation of Vision-Language Models with Active Sample Selection | CVPR'2026 Findings | [📄 Paper](https://arxiv.org/abs/2604.21728) |
+| — | Reliable Test-Time Adaptation via Evidential Uncertainty Modeling in Vision-Language Models | CVPR'2026 Findings | [📄 Paper](https://doi.org/10.1109/cvprf71909.2026.00227) |
+| — | Dual-Modality Anchor-Guided Filtering for Test-Time Prompt Tuning | CVPR'2026 Findings | [📄 Paper](https://arxiv.org/abs/2604.12403) |
 | Uni-Adapter | Adapt-As-You-Walk Through the Clouds: Training-Free Online Test-Time Adaptation of 3D Vision-Language Foundation Models | AAAI'2026 | [📄 Paper](https://ojs.aaai.org/index.php/AAAI/article/view/37888) / [💻 Code](https://github.com/Mehran-TAM/Uni-Adapter) |
+| D2TPT | Doubly Debiased Test-Time Prompt Tuning for Vision-Language Models | AAAI'2026 (Oral) | [📄 Paper](https://ojs.aaai.org/index.php/AAAI/article/view/37863) / [💻 Code](https://github.com/FF2127/D2TPT) |
+| — | Learning Well-Structured Logits: Leveraging Vision–Language Complementarity for Open-World Test-Time Adaptation | IJCAI'2026 | [📄 Paper](https://doi.org/10.24963/ijcai.2026/158) |
 | VLOD-TTA | VLOD-TTA: Test-Time Adaptation of Vision-Language Object Detectors | ECCV'2026 | [📄 Paper](https://media.eventhosts.cc/Conferences/ECCV2026/pdfs/3403.pdf) / [💻 Code](https://github.com/imatif17/VLOD-TTA) |
 | PAA | Probe, Anchor, and Amend: Active Test-Time Adaptation of Vision-Language Models | ECCV'2026 | [📄 Paper](https://media.eventhosts.cc/Conferences/ECCV2026/pdfs/10363.pdf) |
 | PuRF | Towards Purified Multi-Label Test-Time Adaptation of Vision-Language Models | ECCV'2026 | [📄 Paper](https://media.eventhosts.cc/Conferences/ECCV2026/pdfs/3717.pdf) / [💻 Code](https://github.com/Evelyn1ywliang/PuRF-MLTTA) |
 | DANCE | DANCE: Diversity-attended Dynamic Caching with Asymmetric Quantization for Test-Time Adaptation of Vision-Language Models | ACL'2026 findings | [📄 Paper](https://aclanthology.org/2026.findings-acl.1860.pdf) |
 | TaTa | Training-Free Test-Time Adaptation with Brownian Distance Covariance in Vision-Language Models | ICASSP'2026 | [📄 Paper](https://arxiv.org/pdf/2601.23253) |
+| TER | TER: Test-Time Embedding Regularization for Calibration-Aware Prompt Tuning in Vision-Language Models | ICASSP'2026 | [📄 Paper](https://doi.org/10.1109/icassp55912.2026.11462365) |
+| MMC | MMC: Min-Max Calibration for Test-Time Prompt Tuning in Vision-Language Models | ICASSP'2026 | [📄 Paper](https://doi.org/10.1109/icassp55912.2026.11463915) |
+| — | Anchored Reliability: Decoupling Estimation from Adaptation for Noisy Test-Time CLIP | ICIP'2026 | [📄 Paper](https://doi.org/10.1109/icip61757.2026.11630209) |
 | AgentCache | AgentCache: Self-correcting Dynamic Memory for Training-Free Test-Time Adaptation of Vision-Language Models | ICIC'2026 | [📄 Paper](https://link.springer.com/chapter/10.1007/978-981-92-3438-7_41) |
+| SATA | SATA: Semantic-Aware Test-Time Adaptation of Vision-Language Models | ICCCS'2026 | [📄 Paper](https://doi.org/10.1109/icccs69761.2026.11613312) |
+| UGPT | UGPT: Uncertainty-Guided Dynamic Prompt Tuning for Vision-Language Models | ICCA'2026 | [📄 Paper](https://doi.org/10.1109/icca69928.2026.11618093) |
 | SCTTA | Style-Aware Contrastive Test-Time Adaptation: A Dual-Cache Model for Robust Vision-Language Alignment | TIP'2026 | [📄 Paper](https://ieeexplore.ieee.org/document/11589538) / [💻 Code](https://github.com/alusi123/SCTTA) |
 | NEAT | Negation-Aware Test-Time Adaptation for Vision-Language Models | TPAMI'2026 | [📄 Paper](https://ieeexplore.ieee.org/abstract/document/11561105) / [💻 Code](https://github.com/hhc1997/NEAT) |
 | BPRE | Bidirectional Prototype-Reward Co-Evolution for Test-Time Adaptation of Vision-Language Models | TMM'2026 | [📄 Paper](https://ieeexplore.ieee.org/abstract/document/11523647) |
 | DHPT | DHPT: Dual-Modality Heterogeneous Prompt Tuning for Online Test-time Adaption in Vision-language Models | TCVST'2026 | [📄 Paper](https://ieeexplore.ieee.org/abstract/document/11363627) |
+| FPT-Noise | FPT-Noise: Dynamic Scene-Aware Counterattack for Test-Time Adversarial Defense in Vision-Language Models | TCSVT'2026 | [📄 Paper](https://arxiv.org/abs/2510.20856) |
+| Self-TPT | Efficient Test-Time Prompt Tuning for Vision-Language Models | IJCV'2026 | [📄 Paper](https://link.springer.com/article/10.1007/s11263-026-03019-3) |
+| — | Calibrated Test-Time Prompt Tuning for Vision-Language Models on Medicine via Information Theoretic | IJMLC'2026 | [📄 Paper](https://doi.org/10.1007/s13042-025-02905-5) |
+| — | Enhancing Vision–Language Model Calibration via Rotation-Enhanced Orthogonality-Constrained Prompt Tuning | TVCJ'2026 | [📄 Paper](https://doi.org/10.1007/s00371-026-04549-0) |
 | PseudoAdapter | Test-Time Adaptation of Vision-Language Models with Low-Rank Pseudo-Consistency | TMLR'2026 | [📄 Paper](https://openreview.net/pdf?id=GDw4pvX9aG) |
 
 ## 2025
@@ -65,6 +79,8 @@ This repository curates papers on **Test-Time Adaptation (TTA)** algorithms for 
 | STS | Test-Time Spectrum-Aware Latent Steering for Zero-Shot Generalization in Vision-Language Models | NeurIPS'2025 | [📄 Paper](https://openreview.net/pdf?id=eV2Y8Gt6JY) / [💻 Code](https://github.com/kdafnis/STS) |
 | SSG | Training-Free Test-Time Adaptation via Shape and Style Guidance for Vision-Language Models | NeurIPS'2025 | [📄 Paper](https://openreview.net/pdf?id=OF7OLxvY0t) |
 | tta-vlm | The Illusion of Progress? A Critical Look at Test-Time Adaptation for Vision-Language Models | NeurIPS'2025 D&B | [📄 Paper](https://proceedings.neurips.cc/paper_files/paper/2025/file/b57ddd8726c217a6fef9a48ce3e09ffd-Paper-Datasets_and_Benchmarks_Track.pdf) / [💻 Code](https://github.com/TomSheng21/tta-vlm) |
+| OOD-Barrier | OOD-Barrier: Build a Middle-Barrier for Open-Set Single-Image Test Time Adaptation via Vision Language Models | NeurIPS'2025 (Spotlight) | [📄 Paper](https://openreview.net/pdf?id=GUPx2otaKL) |
+| ADAPT | Backpropagation-Free Test-Time Adaptation via Probabilistic Gaussian Alignment | NeurIPS'2025 | [📄 Paper](https://doi.org/10.52202/085713-2562) / [💻 Code](https://aim-skku.github.io/ADAPT/) |
 | B2TPT | Black-Box Test-Time Prompt Tuning for Vision-Language Models | AAAI'2025 | [📄 Paper](https://ojs.aaai.org/index.php/AAAI/article/view/32652) / [💻 Code](https://github.com/MFAaaaaaa/B2TPT) |
 | SEraser | Spurious Feature Eraser: Stabilizing Test-Time Adaptation for Vision-Language Foundation Model | AAAI'2025 | [📄 Paper](https://ojs.aaai.org/index.php/AAAI/article/view/34124) / [💻 Code](https://github.com/MaHuanAAA/SEraser) |
 | BCA | Bayesian Test-Time Adaptation for Vision-Language Models | CVPR'2025 | [📄 Paper](https://openaccess.thecvf.com/content/CVPR2025/papers/Zhou_Bayesian_Test-Time_Adaptation_for_Vision-Language_Models_CVPR_2025_paper.pdf) / [💻 Code](https://github.com/cuishuang99/BayesTTA) |
@@ -74,10 +90,12 @@ This repository curates papers on **Test-Time Adaptation (TTA)** algorithms for 
 | SCAP | SCAP: Transductive Test-Time Adaptation via Supportive Clique-based Attribute Prompting | CVPR'2025 | [📄 Paper](https://openaccess.thecvf.com/content/CVPR2025/papers/Zhang_SCAP_Transductive_Test-Time_Adaptation_via_Supportive_Clique-based_Attribute_Prompting_CVPR_2025_paper.pdf) / [💻 Code](https://github.com/zhoujiahuan1991/CVPR2025-SCAP) |
 | StatA | Realistic Test-Time Adaptation of Vision-Language Models | CVPR'2025 | [📄 Paper](https://openaccess.thecvf.com/content/CVPR2025/papers/Zanella_Realistic_Test-Time_Adaptation_of_Vision-Language_Models_CVPR_2025_paper.pdf) / [💻 Code](https://github.com/MaxZanella/StatA) |
 | TAPT | TAPT: Test-Time Adversarial Prompt Tuning for Robust Inference in Vision-Language Models | CVPR'2025 | [📄 Paper](https://openaccess.thecvf.com/content/CVPR2025/papers/Wang_TAPT_Test-Time_Adversarial_Prompt_Tuning_for_Robust_Inference_in_Vision-Language_Models_CVPR_2025_paper.pdf) / [💻 Code](https://github.com/xinwong/TAPT) |
+| HKPT | Hierarchical Knowledge Prompt Tuning for Multi-task Test-Time Adaptation | CVPR'2025 | [📄 Paper](https://openaccess.thecvf.com/content/CVPR2025/html/Zhang_Hierarchical_Knowledge_Prompt_Tuning_for_Multi-task_Test-Time_Adaptation_CVPR_2025_paper.html) |
 | BATCLIP | BATCLIP: Bimodal Online Test-Time Adaptation for CLIP | ICCV'2025 | [📄 Paper](https://arxiv.org/pdf/2412.02837) / [💻 Code](https://github.com/sarthaxxxxx/BATCLIP) |
 | Latte | Latte: Collaborative Test-Time Adaptation of Vision-Language Models in Federated Learning | ICCV'2025 | [📄 Paper](https://arxiv.org/pdf/2507.21494) / [💻 Code](https://github.com/baowenxuan/Latte) |
 | MCP | Multi-Cache Enhanced Prototype Learning for Test-Time Generalization of Vision-Language Models | ICCV'2025 | [📄 Paper](https://arxiv.org/pdf/2508.01225) / [💻 Code](https://zhaihaotian.github.io/MCP-ICCV25/) |
 | TT-RAA | Test-Time Retrieval-Augmented Adaptation for Vision-Language Models | ICCV'2025 | [📄 Paper](https://openaccess.thecvf.com/content/ICCV2025/papers/Fan_Test-Time_Retrieval-Augmented_Adaptation_for_Vision-Language_Models_ICCV_2025_paper.pdf) / [💻 Code](https://github.com/xinqi-fan/TT-RAA) |
+| — | Is Less More? Exploring Token Condensation as Training-Free Test-Time Adaptation | ICCV'2025 | [📄 Paper](https://doi.org/10.1109/iccv51701.2025.00021) |
 | GS-Bias | GS-Bias: Global-Spatial Bias Learner for Single-Image Test-Time Adaptation of Vision-Language Models | ICML'2025 | [📄 Paper](https://openreview.net/pdf?id=gdE3HbHkIL) / [💻 Code](https://github.com/hzhxmu/GS-Bias) |
 | DynaPrompt | DynaPrompt: Dynamic Test-Time Prompt Tuning | ICLR'2025 | [📄 Paper](https://openreview.net/pdf?id=EFZEdHB3Mp) / [💻 Code](https://github.com/zzzx1224/DynaPrompt) |
 | ECALP | Efficient and Context-Aware Label Propagation for Zero-/Few-Shot Training-Free Adaptation of Vision-Language Model | ICLR'2025 | [📄 Paper](https://openreview.net/pdf?id=D10yarGQNk) / [💻 Code](https://github.com/Yushu-Li/ECALP) |
@@ -94,6 +112,8 @@ This repository curates papers on **Test-Time Adaptation (TTA)** algorithms for 
 | TTL | Test-Time Low Rank Adaptation via Confidence Maximization for Zero-Shot Generalization of Vision-Language Models | WACV'2025 | [📄 Paper](https://openaccess.thecvf.com/content/WACV2025/papers/Imam_Test-Time_Low_Rank_Adaptation_via_Confidence_Maximization_for_Zero-Shot_Generalization_WACV_2025_paper.pdf) / [💻 Code](https://github.com/Razaimam45/TTL-Test-Time-Low-Rank-Adaptation) |
 | ETTA | ETTA: Efficient Test-Time Adaptation for Vision-Language Models through Dynamic Embedding Updates | BMVC'2025 | [📄 Paper](https://arxiv.org/pdf/2508.05898) / [💻 Code](https://github.com/hamidreza-dastmalchi/ETTA) |
 | ROSITA | Efficient Open Set Single Image Test Time Adaptation of Vision Language Models | TMLR'2025 | [📄 Paper](https://arxiv.org/pdf/2406.00481) / [💻 Code](https://github.com/manogna-s/ROSITA) |
+| CAT-TPT | CAT-TPT: Class-Agnostic Text-based Test-time Prompt Tuning for Vision-Language Models | IJCV'2025 | [📄 Paper](https://doi.org/10.1007/s11263-025-02508-1) / [💻 Code](https://github.com/AIM-SKKU/CAT-TPT) |
+| IT3A | Diffusion-Enhanced Test-time Adaptation with Text and Image Augmentation | IJCV'2025 | [📄 Paper](https://doi.org/10.1007/s11263-025-02412-8) / [💻 Code](https://github.com/chunmeifeng/DiffTPT) |
 
 ## 2024
 
