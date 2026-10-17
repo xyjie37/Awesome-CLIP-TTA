@@ -17,8 +17,11 @@
     --border: #e6e6e6;
     --hover: #fafafa;
     --track: #f0f0f0;
-    --accent: #2563eb;
-    --accent-hover: #1d4ed8;
+    --zebra: #f5f8ff;
+    --zebra-hover: #ecf2ff;
+    --accent: #3b6ef6;
+    --accent-hover: #2f5cd8;
+    --bar-grad: linear-gradient(90deg, #6e97ff 0%, #3b6ef6 100%);
   }
   html.dark {
     --bg: #0a0a0a;
@@ -28,8 +31,11 @@
     --border: #262626;
     --hover: #141414;
     --track: #1f1f1f;
-    --accent: #60a5fa;
-    --accent-hover: #93c5fd;
+    --zebra: #0e1524;
+    --zebra-hover: #141e33;
+    --accent: #6b97ff;
+    --accent-hover: #8fb0ff;
+    --bar-grad: linear-gradient(90deg, #84a9ff 0%, #5b86f5 100%);
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
@@ -97,10 +103,10 @@
   .bar-row:hover .bar-label, .bar-row.active .bar-label { color: var(--fg); }
   .bar-track { height: 20px; background: var(--track); border-radius: 3px; overflow: hidden; }
   .bar-fill {
-    display: block; height: 100%; background: var(--accent); border-radius: 3px;
+    display: block; height: 100%; background: var(--bar-grad); border-radius: 3px;
     transition: width .5s cubic-bezier(.2,.8,.2,1);
   }
-  .bar-row.active .bar-fill { background: var(--accent-hover); }
+  .bar-row.active .bar-fill { filter: brightness(0.92); }
   .bar-count {
     font-size: 12px; color: var(--fg-3); font-variant-numeric: tabular-nums; text-align: right;
   }
@@ -154,9 +160,10 @@
     display: grid;
     grid-template-columns: minmax(72px, auto) 1fr auto auto;
     align-items: baseline; gap: 16px;
-    padding: 12px 8px; border-bottom: 1px solid var(--border); border-radius: 4px;
+    padding: 12px 12px; border-radius: 6px;
   }
-  .paper:hover { background: var(--hover); }
+  .paper:nth-of-type(even) { background: var(--zebra); }
+  .paper:hover { background: var(--zebra-hover); }
   .p-method { font-weight: 600; font-size: 13px; white-space: nowrap; }
   .p-method.empty { color: var(--fg-3); font-weight: 400; }
   .p-title { font-size: 14px; color: var(--fg-2); }
