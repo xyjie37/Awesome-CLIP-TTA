@@ -4,340 +4,379 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Awesome CLIP Test-Time Adaptation</title>
-<meta name="description" content="A curated list of papers on (Online) Test-Time Adaptation for CLIP / Vision-Language Models">
+<meta name="description" content="A curated list of papers on test-time adaptation of CLIP and vision-language models.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #FAFAF9;
-    --surface: #FFFFFF;
-    --border: #E7E5E4;
-    --text: #1C1917;
-    --text-2: #57534E;
-    --text-3: #A8A29E;
-    --accent: #4F46E5;
-    --accent-soft: #EEF2FF;
-    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 4px 16px rgba(28,25,23,.05);
-    --radius: 12px;
+    --bg: #ffffff;
+    --fg: #171717;
+    --fg-2: #525252;
+    --fg-3: #8a8a8a;
+    --border: #e6e6e6;
+    --hover: #fafafa;
+    --track: #f0f0f0;
+    --accent: #2563eb;
+    --accent-hover: #1d4ed8;
   }
-  [data-theme="dark"] {
-    --bg: #0C0A09;
-    --surface: #1C1917;
-    --border: #292524;
-    --text: #FAFAF9;
-    --text-2: #A8A29E;
-    --text-3: #57534E;
-    --accent: #818CF8;
-    --accent-soft: #1E1B4B;
-    --shadow: 0 1px 2px rgba(0,0,0,.2), 0 4px 16px rgba(0,0,0,.25);
+  html.dark {
+    --bg: #0a0a0a;
+    --fg: #ededed;
+    --fg-2: #a3a3a3;
+    --fg-3: #6b6b6b;
+    --border: #262626;
+    --hover: #141414;
+    --track: #1f1f1f;
+    --accent: #60a5fa;
+    --accent-hover: #93c5fd;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
   body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     background: var(--bg);
-    color: var(--text);
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-    transition: background .25s, color .25s;
+    color: var(--fg);
+    font-size: 15px;
+    line-height: 1.55;
+    transition: background .2s ease, color .2s ease;
   }
-  .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { color: var(--accent-hover); }
 
   /* ---------- Top bar ---------- */
   .topbar {
-    position: sticky; top: 0; z-index: 50;
-    background: color-mix(in srgb, var(--bg) 82%, transparent);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
+    position: sticky; top: 0;
+    background: var(--bg);
+    z-index: 10;
   }
-  .topbar-inner { display: flex; align-items: center; justify-content: space-between; height: 60px; }
-  .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 15px; letter-spacing: -.01em; text-decoration: none; color: var(--text); }
-  .brand .logo {
-    width: 28px; height: 28px; border-radius: 8px;
-    background: linear-gradient(135deg, #4F46E5, #0891B2);
-    display: grid; place-items: center; color: #fff; font-size: 14px;
+  .topbar-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 56px;
   }
-  .topbar-actions { display: flex; align-items: center; gap: 8px; }
+  .wordmark { font-weight: 600; font-size: 14px; letter-spacing: -0.01em; color: var(--fg); }
+  .topbar-right { display: flex; align-items: center; gap: 18px; }
+  .topbar-right a { font-size: 13px; color: var(--fg-2); font-weight: 500; }
+  .topbar-right a:hover { color: var(--fg); }
   .icon-btn {
-    display: inline-flex; align-items: center; gap: 6px;
-    padding: 7px 12px; border-radius: 8px; border: 1px solid var(--border);
-    background: var(--surface); color: var(--text-2);
-    font-size: 13px; font-weight: 500; cursor: pointer; text-decoration: none;
-    transition: all .15s;
+    background: none; border: 1px solid var(--border); border-radius: 6px;
+    width: 30px; height: 30px; cursor: pointer; color: var(--fg-2);
+    display: flex; align-items: center; justify-content: center;
   }
-  .icon-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .icon-btn:hover { color: var(--fg); border-color: var(--fg-3); }
 
   /* ---------- Hero ---------- */
-  .hero { padding: 72px 0 40px; text-align: center; }
-  .hero .kicker {
-    display: inline-block; padding: 4px 12px; border-radius: 999px;
-    background: var(--accent-soft); color: var(--accent);
-    font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase;
-    margin-bottom: 20px;
-  }
+  .hero { padding: 72px 0 40px; }
   .hero h1 {
-    font-size: clamp(30px, 5vw, 44px); font-weight: 800; letter-spacing: -.03em; line-height: 1.15;
-    background: linear-gradient(120deg, var(--text) 40%, var(--accent));
-    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    font-size: 34px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.15;
   }
-  .hero p { max-width: 640px; margin: 16px auto 0; color: var(--text-2); font-size: 16px; }
-  .stats { display: flex; justify-content: center; gap: 12px; margin-top: 32px; flex-wrap: wrap; }
-  .stat {
-    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
-    padding: 14px 24px; box-shadow: var(--shadow); min-width: 120px;
+  .hero p {
+    margin-top: 14px; font-size: 16px; color: var(--fg-2); max-width: 640px;
   }
-  .stat .num { font-size: 24px; font-weight: 800; letter-spacing: -.02em; font-family: 'JetBrains Mono', monospace; }
-  .stat .label { font-size: 12px; color: var(--text-3); font-weight: 500; text-transform: uppercase; letter-spacing: .06em; }
+  .hero .meta { margin-top: 20px; font-size: 13px; color: var(--fg-3); font-variant-numeric: tabular-nums; }
+  .hero .meta strong { color: var(--fg-2); font-weight: 600; }
 
-  /* ---------- Filter bar ---------- */
-  .filterbar {
-    position: sticky; top: 60px; z-index: 40;
-    background: color-mix(in srgb, var(--bg) 88%, transparent);
-    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-    padding: 14px 0; border-bottom: 1px solid var(--border);
+  /* ---------- Chart ---------- */
+  .section { padding: 8px 0 40px; }
+  .section-title {
+    font-size: 13px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.06em; color: var(--fg-3); margin-bottom: 20px;
   }
-  .filter-row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  .chart { display: flex; flex-direction: column; gap: 6px; }
+  .bar-row {
+    display: grid; grid-template-columns: 110px 1fr 32px; align-items: center;
+    gap: 12px; border: none; background: none; padding: 0; cursor: pointer;
+    font: inherit; text-align: left; color: inherit;
+  }
+  .bar-label {
+    font-size: 13px; font-weight: 500; color: var(--fg-2);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .bar-row:hover .bar-label, .bar-row.active .bar-label { color: var(--fg); }
+  .bar-track { height: 20px; background: var(--track); border-radius: 3px; overflow: hidden; }
+  .bar-fill {
+    display: block; height: 100%; background: var(--accent); border-radius: 3px;
+    transition: width .5s cubic-bezier(.2,.8,.2,1);
+  }
+  .bar-row.active .bar-fill { background: var(--accent-hover); }
+  .bar-count {
+    font-size: 12px; color: var(--fg-3); font-variant-numeric: tabular-nums; text-align: right;
+  }
+  .chart-toggle {
+    margin-top: 14px; background: none; border: none; padding: 0; cursor: pointer;
+    font-size: 13px; font-weight: 500; color: var(--fg-2); font-family: inherit;
+  }
+  .chart-toggle:hover { color: var(--fg); }
+
+  /* ---------- Filters ---------- */
+  .controls {
+    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+    padding: 24px 0; border-top: 1px solid var(--border);
+  }
   .search {
-    flex: 1; min-width: 220px; display: flex; align-items: center; gap: 8px;
-    background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
-    padding: 9px 14px; transition: border-color .15s, box-shadow .15s;
+    flex: 1; min-width: 200px; display: flex; align-items: center; gap: 8px;
+    border: 1px solid var(--border); border-radius: 6px; padding: 0 12px; height: 36px;
   }
-  .search:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+  .search:focus-within { border-color: var(--fg-3); }
+  .search svg { color: var(--fg-3); flex-shrink: 0; }
   .search input {
     border: none; outline: none; background: none; width: 100%;
-    font: inherit; font-size: 14px; color: var(--text);
+    font: inherit; font-size: 14px; color: var(--fg);
   }
-  .search input::placeholder { color: var(--text-3); }
-  select, .toggle {
-    font: inherit; font-size: 13px; font-weight: 500;
-    background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
-    padding: 9px 12px; color: var(--text-2); cursor: pointer; outline: none;
+  .search input::placeholder { color: var(--fg-3); }
+  select, .check-label {
+    height: 36px; border: 1px solid var(--border); border-radius: 6px;
+    background: var(--bg); color: var(--fg); font: inherit; font-size: 13px;
+    padding: 0 10px; cursor: pointer;
   }
-  .chips { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
-  .chip {
-    padding: 5px 14px; border-radius: 999px; font-size: 13px; font-weight: 600;
-    border: 1px solid var(--border); background: var(--surface); color: var(--text-2);
-    cursor: pointer; transition: all .15s; font-family: 'JetBrains Mono', monospace;
+  .check-label { display: flex; align-items: center; gap: 7px; user-select: none; }
+  .check-label input { accent-color: var(--accent); margin: 0; }
+
+  .years { display: flex; gap: 22px; padding: 0 0 20px; border-bottom: 1px solid var(--border); }
+  .year-tab {
+    background: none; border: none; padding: 0 0 12px; margin-bottom: -1px; cursor: pointer;
+    font: inherit; font-size: 14px; font-weight: 500; color: var(--fg-3);
+    border-bottom: 2px solid transparent; font-variant-numeric: tabular-nums;
   }
-  .chip:hover { border-color: var(--accent); color: var(--accent); }
-  .chip.active { background: var(--text); border-color: var(--text); color: var(--bg); }
-  .result-count { font-size: 13px; color: var(--text-3); margin-left: auto; font-family: 'JetBrains Mono', monospace; }
+  .year-tab:hover { color: var(--fg-2); }
+  .year-tab.active { color: var(--fg); border-bottom-color: var(--fg); }
+  .year-tab .n { color: var(--fg-3); font-weight: 400; font-size: 12px; margin-left: 3px; }
+  .year-tab.active .n { color: var(--fg-3); }
 
   /* ---------- Paper list ---------- */
-  .papers { padding: 24px 0 80px; }
-  .year-block { margin-bottom: 36px; }
-  .year-head {
-    display: flex; align-items: baseline; gap: 12px; margin: 28px 0 14px;
+  .year-group h2 {
+    font-size: 20px; font-weight: 600; letter-spacing: -0.02em;
+    padding: 36px 0 8px; font-variant-numeric: tabular-nums;
   }
-  .year-head h2 { font-size: 22px; font-weight: 800; letter-spacing: -.02em; font-family: 'JetBrains Mono', monospace; }
-  .year-head .count { font-size: 13px; color: var(--text-3); font-weight: 500; }
-  .year-head .line { flex: 1; height: 1px; background: var(--border); }
+  .paper {
+    display: grid;
+    grid-template-columns: minmax(72px, auto) 1fr auto auto;
+    align-items: baseline; gap: 16px;
+    padding: 12px 8px; border-bottom: 1px solid var(--border); border-radius: 4px;
+  }
+  .paper:hover { background: var(--hover); }
+  .p-method { font-weight: 600; font-size: 13px; white-space: nowrap; }
+  .p-method.empty { color: var(--fg-3); font-weight: 400; }
+  .p-title { font-size: 14px; color: var(--fg-2); }
+  .p-venue {
+    font-size: 11px; font-weight: 500; color: var(--fg-2);
+    border: 1px solid var(--border); border-radius: 4px; padding: 1px 7px;
+    white-space: nowrap; font-variant-numeric: tabular-nums;
+  }
+  .p-links { display: flex; gap: 12px; font-size: 13px; font-weight: 500; white-space: nowrap; }
+  .p-links .disabled { color: var(--fg-3); font-weight: 400; cursor: default; }
 
-  .card {
-    display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 6px 16px;
-    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
-    padding: 16px 20px; margin-bottom: 10px; box-shadow: var(--shadow);
-    transition: transform .15s, border-color .15s, box-shadow .15s;
-  }
-  .card:hover { transform: translateY(-1px); border-color: color-mix(in srgb, var(--accent) 40%, var(--border)); }
-  .card-main { min-width: 0; }
-  .card-title { font-size: 15px; font-weight: 600; letter-spacing: -.01em; line-height: 1.45; }
-  .card-title .method {
-    font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600;
-    color: var(--accent); background: var(--accent-soft);
-    padding: 2px 8px; border-radius: 6px; margin-right: 8px; white-space: nowrap;
-  }
-  .card-meta { display: flex; align-items: center; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
-  .venue-chip {
-    display: inline-flex; align-items: center; gap: 6px;
-    font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 999px;
-    color: var(--chip-color); background: color-mix(in srgb, var(--chip-color) 10%, transparent);
-    border: 1px solid color-mix(in srgb, var(--chip-color) 25%, transparent);
-    font-family: 'JetBrains Mono', monospace; white-space: nowrap;
-  }
-  .venue-chip::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--chip-color); }
-  .card-links { display: flex; gap: 8px; align-items: center; justify-content: flex-end; }
-  .link-btn {
-    display: inline-flex; align-items: center; gap: 5px;
-    font-size: 13px; font-weight: 600; text-decoration: none;
-    padding: 6px 14px; border-radius: 8px; border: 1px solid var(--border);
-    color: var(--text-2); background: var(--bg); transition: all .15s; white-space: nowrap;
-  }
-  .link-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
-  .link-btn.primary { color: var(--accent); border-color: color-mix(in srgb, var(--accent) 35%, var(--border)); }
-  .empty { text-align: center; color: var(--text-3); padding: 60px 0; font-size: 15px; }
+  .empty-state { padding: 48px 0; color: var(--fg-3); font-size: 14px; }
 
-  /* ---------- Footer ---------- */
-  footer { border-top: 1px solid var(--border); padding: 32px 0 48px; text-align: center; color: var(--text-3); font-size: 13px; }
-  footer a { color: var(--accent); text-decoration: none; }
-  footer a:hover { text-decoration: underline; }
+  footer {
+    border-top: 1px solid var(--border); margin-top: 48px;
+    padding: 28px 0 48px; font-size: 13px; color: var(--fg-3);
+    display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+  }
 
   @media (max-width: 640px) {
-    .card { grid-template-columns: 1fr; }
-    .card-links { justify-content: flex-start; }
-    .hero { padding: 48px 0 28px; }
+    .hero { padding: 48px 0 32px; }
+    .hero h1 { font-size: 27px; }
+    .paper { grid-template-columns: 1fr auto; grid-template-areas: "method venue" "title title" "links links"; gap: 4px 12px; }
+    .p-method { grid-area: method; }
+    .p-title { grid-area: title; }
+    .p-venue { grid-area: venue; justify-self: end; }
+    .p-links { grid-area: links; }
+    .bar-row { grid-template-columns: 84px 1fr 28px; gap: 8px; }
   }
 </style>
 </head>
 <body>
 
 <header class="topbar">
-  <div class="container topbar-inner">
-    <a class="brand" href="#top"><span class="logo">🚀</span> Awesome CLIP TTA</a>
-    <div class="topbar-actions">
-      <button class="icon-btn" id="themeToggle" title="Toggle dark mode">🌙</button>
-      <a class="icon-btn" href="https://github.com/xyjie37/Awesome-CLIP-TTA" target="_blank" rel="noopener">★ GitHub</a>
+  <div class="wrap topbar-inner">
+    <span class="wordmark">Awesome CLIP-TTA</span>
+    <div class="topbar-right">
+      <a href="https://github.com/xyjie37/Awesome-CLIP-TTA" target="_blank" rel="noopener">GitHub ↗</a>
+      <button class="icon-btn" id="themeBtn" aria-label="Toggle theme">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+        </svg>
+      </button>
     </div>
   </div>
 </header>
 
-<main id="top">
-  <section class="hero container">
-    <span class="kicker">Paper Collection</span>
-    <h1>Awesome CLIP Test-Time Adaptation</h1>
-    <p>A curated list of papers on <strong>(Online) Test-Time Adaptation</strong> for CLIP / Vision-Language Models — unlabeled test data arrives in sequential batches, and the model adapts incrementally with each batch.</p>
-    <div class="stats" id="stats"></div>
+<main class="wrap">
+
+  <section class="hero">
+    <h1>CLIP Test-Time Adaptation</h1>
+    <p>A curated collection of papers on test-time adaptation of CLIP and vision-language models, 2022 – 2026.</p>
+    <div class="meta" id="metaStats"></div>
   </section>
 
-  <div class="filterbar">
-    <div class="container">
-      <div class="filter-row">
-        <label class="search">🔍 <input id="searchInput" type="text" placeholder="Search by title or method…" autocomplete="off"></label>
-        <select id="venueSelect"><option value="">All venues</option></select>
-        <label class="toggle" style="display:flex;align-items:center;gap:6px;">
-          <input type="checkbox" id="codeOnly"> Code available
-        </label>
-        <span class="result-count" id="resultCount"></span>
-      </div>
-      <div class="chips" id="yearChips"></div>
+  <section class="section">
+    <div class="section-title">Papers by venue</div>
+    <div class="chart" id="chart"></div>
+    <button class="chart-toggle" id="chartToggle">Show all venues ↓</button>
+  </section>
+
+  <div class="controls">
+    <div class="search">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path>
+      </svg>
+      <input id="q" type="text" placeholder="Search papers or methods…" autocomplete="off">
     </div>
+    <select id="venueSelect"><option value="">All venues</option></select>
+    <label class="check-label"><input type="checkbox" id="hasCode"> Has code</label>
   </div>
 
-  <section class="papers container" id="papers"></section>
+  <nav class="years" id="yearTabs"></nav>
+
+  <section id="list"></section>
+
 </main>
 
 <footer>
-  <div class="container">
-    Data sourced from <a href="https://github.com/xyjie37/Awesome-CLIP-TTA" target="_blank" rel="noopener">Awesome-CLIP-TTA</a> ·
-    Regenerated with <code>scripts/build_data.py</code> ·
-    Contributions welcome via pull request
+  <div class="wrap" style="display:contents">
+    <span>Awesome CLIP Test-Time Adaptation</span>
+    <span>Data generated from the repository README · <a href="https://github.com/xyjie37/Awesome-CLIP-TTA">contribute on GitHub</a></span>
   </div>
 </footer>
 
 <script src="data.js"></script>
 <script>
 (function () {
-  const { papers, venues, years } = DATA;
+  const papers = DATA.papers;
+  const CHART_PREVIEW = 12;
 
-  // ---------- theme ----------
-  const root = document.documentElement;
+  /* ---------- theme ---------- */
+  const themeBtn = document.getElementById('themeBtn');
   const saved = localStorage.getItem('tta-theme');
-  if (saved) root.dataset.theme = saved;
-  else if (window.matchMedia('(prefers-color-scheme: dark)').matches) root.dataset.theme = 'dark';
-  const themeBtn = document.getElementById('themeToggle');
-  const syncThemeIcon = () => themeBtn.textContent = root.dataset.theme === 'dark' ? '☀️' : '🌙';
-  syncThemeIcon();
-  themeBtn.addEventListener('click', () => {
-    root.dataset.theme = root.dataset.theme === 'dark' ? '' : 'dark';
-    localStorage.setItem('tta-theme', root.dataset.theme);
-    syncThemeIcon();
-  });
+  if (saved === 'dark' || (!saved && matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark');
+  }
+  themeBtn.onclick = () => {
+    document.documentElement.classList.toggle('dark');
+    localStorage.setItem('tta-theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+  };
 
-  // ---------- stats ----------
-  const codeCount = papers.filter(p => p.code).length;
-  document.getElementById('stats').innerHTML = [
-    [papers.length, 'Papers'],
-    [codeCount, 'With Code'],
-    [venues.length, 'Venues'],
-    [years.length, 'Years'],
-  ].map(([n, l]) => `<div class="stat"><div class="num">${n}</div><div class="label">${l}</div></div>`).join('');
+  /* ---------- stats ---------- */
+  const years = [...new Set(papers.map(p => p.year))].sort((a, b) => b - a);
+  const venueCounts = {};
+  papers.forEach(p => { venueCounts[p.venueFamily] = (venueCounts[p.venueFamily] || 0) + 1; });
+  const venueList = Object.entries(venueCounts).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+  const withCode = papers.filter(p => p.code).length;
 
-  // ---------- filters ----------
-  const state = { query: '', year: null, venue: '', codeOnly: false };
-  const searchInput = document.getElementById('searchInput');
-  const venueSelect = document.getElementById('venueSelect');
-  const codeOnly = document.getElementById('codeOnly');
-  const yearChips = document.getElementById('yearChips');
-  const papersEl = document.getElementById('papers');
-  const resultCount = document.getElementById('resultCount');
+  document.getElementById('metaStats').innerHTML =
+    `<strong>${papers.length}</strong> papers &nbsp;·&nbsp; <strong>${withCode}</strong> with code &nbsp;·&nbsp; ` +
+    `<strong>${venueList.length}</strong> venues &nbsp;·&nbsp; ${years[years.length - 1]}–${years[0]}`;
 
-  venues.forEach(v => {
-    const opt = document.createElement('option');
-    opt.value = v; opt.textContent = v;
-    venueSelect.appendChild(opt);
-  });
+  /* ---------- state ---------- */
+  const state = { q: '', venue: '', year: null, code: false };
 
-  ['All', ...years].forEach(y => {
-    const chip = document.createElement('button');
-    chip.className = 'chip' + (y === 'All' ? ' active' : '');
-    chip.textContent = y;
-    chip.addEventListener('click', () => {
-      state.year = y === 'All' ? null : y;
-      yearChips.querySelectorAll('.chip').forEach(c => c.classList.toggle('active', c === chip));
-      render();
+  /* ---------- chart ---------- */
+  const chartEl = document.getElementById('chart');
+  const chartToggle = document.getElementById('chartToggle');
+  let chartExpanded = false;
+  const maxCount = venueList[0][1];
+
+  function renderChart() {
+    const shown = chartExpanded ? venueList : venueList.slice(0, CHART_PREVIEW);
+    chartEl.innerHTML = '';
+    shown.forEach(([v, n]) => {
+      const row = document.createElement('button');
+      row.className = 'bar-row' + (state.venue === v ? ' active' : '');
+      row.innerHTML =
+        `<span class="bar-label">${v}</span>` +
+        `<span class="bar-track"><span class="bar-fill" style="width:${n / maxCount * 100}%"></span></span>` +
+        `<span class="bar-count">${n}</span>`;
+      row.onclick = () => {
+        state.venue = state.venue === v ? '' : v;
+        venueSelect.value = state.venue;
+        renderChart(); renderList();
+      };
+      chartEl.appendChild(row);
     });
-    yearChips.appendChild(chip);
+    chartToggle.style.display = venueList.length > CHART_PREVIEW ? '' : 'none';
+    chartToggle.textContent = chartExpanded
+      ? 'Show fewer venues ↑'
+      : `Show all ${venueList.length} venues ↓`;
+  }
+  chartToggle.onclick = () => { chartExpanded = !chartExpanded; renderChart(); };
+
+  /* ---------- controls ---------- */
+  const q = document.getElementById('q');
+  const venueSelect = document.getElementById('venueSelect');
+  const hasCode = document.getElementById('hasCode');
+  venueList.forEach(([v, n]) => {
+    const o = document.createElement('option');
+    o.value = v; o.textContent = `${v} (${n})`;
+    venueSelect.appendChild(o);
   });
+  q.oninput = () => { state.q = q.value.trim().toLowerCase(); renderList(); };
+  venueSelect.onchange = () => { state.venue = venueSelect.value; renderChart(); renderList(); };
+  hasCode.onchange = () => { state.code = hasCode.checked; renderList(); };
 
-  let debounce;
-  searchInput.addEventListener('input', e => {
-    clearTimeout(debounce);
-    debounce = setTimeout(() => { state.query = e.target.value.trim().toLowerCase(); render(); }, 120);
-  });
-  venueSelect.addEventListener('change', e => { state.venue = e.target.value; render(); });
-  codeOnly.addEventListener('change', e => { state.codeOnly = e.target.checked; render(); });
-
-  // ---------- render ----------
-  function match(p) {
-    if (state.year && p.year !== state.year) return false;
-    if (state.venue && p.venueFamily !== state.venue) return false;
-    if (state.codeOnly && !p.code) return false;
-    if (state.query) {
-      const hay = (p.title + ' ' + p.method).toLowerCase();
-      if (!hay.includes(state.query)) return false;
-    }
-    return true;
+  /* ---------- year tabs ---------- */
+  const yearTabs = document.getElementById('yearTabs');
+  function renderTabs() {
+    yearTabs.innerHTML = '';
+    const tabs = [{ y: null, label: 'All', n: papers.length }]
+      .concat(years.map(y => ({ y, label: y, n: papers.filter(p => p.year === y).length })));
+    tabs.forEach(t => {
+      const b = document.createElement('button');
+      b.className = 'year-tab' + (state.year === t.y ? ' active' : '');
+      b.innerHTML = `${t.label}<span class="n">${t.n}</span>`;
+      b.onclick = () => { state.year = t.y; renderTabs(); renderList(); };
+      yearTabs.appendChild(b);
+    });
   }
 
-  function cardHTML(p) {
-    const method = p.method ? `<span class="method">${esc(p.method)}</span>` : '';
-    const paper = p.paper ? `<a class="link-btn primary" href="${p.paper}" target="_blank" rel="noopener">📄 Paper</a>` : '';
-    const code = p.code ? `<a class="link-btn" href="${p.code}" target="_blank" rel="noopener">💻 Code</a>` : '';
-    return `<article class="card">
-      <div class="card-main">
-        <div class="card-title">${method}${esc(p.title)}</div>
-        <div class="card-meta"><span class="venue-chip" style="--chip-color:${p.color}">${esc(p.venue)}</span></div>
-      </div>
-      <div class="card-links">${paper}${code}</div>
-    </article>`;
+  /* ---------- list ---------- */
+  const list = document.getElementById('list');
+  function filtered() {
+    return papers.filter(p =>
+      (!state.year || p.year === state.year) &&
+      (!state.venue || p.venueFamily === state.venue) &&
+      (!state.code || p.code) &&
+      (!state.q || (p.title + ' ' + p.method).toLowerCase().includes(state.q))
+    );
   }
-
-  function esc(s) {
-    return s.replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-  }
-
-  function render() {
-    const filtered = papers.filter(match);
-    resultCount.textContent = `${filtered.length} / ${papers.length} papers`;
-    if (!filtered.length) {
-      papersEl.innerHTML = '<div class="empty">No papers match the current filters.</div>';
+  function renderList() {
+    const rows = filtered();
+    list.innerHTML = '';
+    if (!rows.length) {
+      list.innerHTML = '<div class="empty-state">No papers match the current filters.</div>';
       return;
     }
-    let html = '';
-    years.forEach(y => {
-      const group = filtered.filter(p => p.year === y);
+    (state.year ? [state.year] : years).forEach(y => {
+      const group = rows.filter(p => p.year === y);
       if (!group.length) return;
-      html += `<div class="year-block">
-        <div class="year-head"><h2>${y}</h2><span class="count">${group.length} paper${group.length > 1 ? 's' : ''}</span><span class="line"></span></div>
-        ${group.map(cardHTML).join('')}
-      </div>`;
+      const g = document.createElement('div');
+      g.className = 'year-group';
+      g.innerHTML = `<h2>${y}</h2>`;
+      group.forEach(p => {
+        const el = document.createElement('div');
+        el.className = 'paper';
+        const method = p.method && p.method !== '—'
+          ? `<span class="p-method">${p.method}</span>`
+          : `<span class="p-method empty">—</span>`;
+        const links =
+          (p.paper ? `<a href="${p.paper}" target="_blank" rel="noopener">Paper</a>` : '') +
+          (p.code ? `<a href="${p.code}" target="_blank" rel="noopener">Code</a>` : '<span class="disabled">Code</span>');
+        el.innerHTML = method +
+          `<span class="p-title">${p.title}</span>` +
+          `<span class="p-venue">${p.venue}</span>` +
+          `<span class="p-links">${links}</span>`;
+        g.appendChild(el);
+      });
+      list.appendChild(g);
     });
-    papersEl.innerHTML = html;
   }
 
-  render();
+  renderChart();
+  renderTabs();
+  renderList();
 })();
 </script>
 </body>
